@@ -45,6 +45,16 @@ namespace landing
             while ((result < low || (result > high)));
             return result; 
         }
+        
+        static void Log()
+        {
+            Console.WriteLine("Logging page");
+        }
+
+        static void CurrentPlay()
+        {
+            Console.WriteLine("Currently playing page");
+        }
         static void Main()
         {
             //initialise highest and lowest choices
@@ -56,6 +66,16 @@ namespace landing
             int usrChoice = readInt("1. Log new game\n" +
                 "2. Check currently playing\n" +
                 "3. Quit\n");
+
+            if (usrChoice == 1)
+            {
+                Log();
+            }
+
+            if (usrChoice == 2)
+            {
+                CurrentPlay();
+            }
 
             //exit
             while (usrChoice == 3)
