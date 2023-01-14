@@ -14,11 +14,9 @@ Console.WriteLine($"SQLite version: {version}");*/
 using System;
 using System.Data.SQLite;
 
-
-
 namespace landing
 {
-    public static class Landing
+    public class Landing
     {
         public static int low = 0;
         public static int high = 3;
@@ -52,6 +50,24 @@ namespace landing
             int usrChoice = readInt("1. Log new game\n" +
                 "2. Check currently playing\n" +
                 "3. Quit\n");
+
+            while (usrChoice == 3)
+            {
+                Console.Clear();
+                Console.WriteLine();
+                int verify = readInt("Are you sure you want to quit?\n" +
+                    "1. Yes\n" +
+                    "2. No\n");
+                if (verify == 1)
+                {
+                    System.Environment.Exit(0);
+                }
+                else
+                {
+                    Console.Clear();
+                    Main();
+                }
+            }
         }
     }
 }
