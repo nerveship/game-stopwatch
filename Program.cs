@@ -18,8 +18,9 @@ namespace landing
 {
     public class Landing
     {
-        public static int low = 0;
-        public static int high = 3;
+        //Initialise highest and lowest choices
+        public static int low;
+        public static int high;
 
         public static string readString(string prompt)
         {
@@ -46,11 +47,17 @@ namespace landing
         }
         static void Main()
         {
+            //initialise highest and lowest choices
+            high = 3;
+            low = 1;
+
+            //landing introduction
             Console.WriteLine("Welcome! What would you like to do today?");
             int usrChoice = readInt("1. Log new game\n" +
                 "2. Check currently playing\n" +
                 "3. Quit\n");
 
+            //exit
             while (usrChoice == 3)
             {
                 Console.Clear();
