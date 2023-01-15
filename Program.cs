@@ -91,6 +91,7 @@ namespace landing
                 }
                 else
                 {
+                    usrChoice = 0;
                     Console.Clear();
                     Main();
                 }
