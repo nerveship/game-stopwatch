@@ -53,7 +53,7 @@ namespace landing
 
             string usrInput = readString("Type 'B' to return to the landing page\n");
 
-            while (usrInput.ToUpper() == "B")
+            if (usrInput.ToUpper() == "B")
             {
                 usrInput = "";
                 Main();
@@ -67,7 +67,7 @@ namespace landing
 
             string usrInput = readString("Type 'B' to return to the landing page\n");
 
-            while (usrInput.ToUpper() == "B")
+            if (usrInput.ToUpper() == "B")
             {
                 usrInput = "";
                 Main();
