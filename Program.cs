@@ -48,15 +48,35 @@ namespace landing
         
         static void Log()
         {
+            Console.Clear();
             Console.WriteLine("Logging page");
+
+            string usrInput = readString("Type 'B' to return to the landing page\n");
+
+            while (usrInput.ToUpper() == "B")
+            {
+                usrInput = "";
+                Main();
+            }
         }
 
         static void CurrentPlay()
         {
+            Console.Clear();
             Console.WriteLine("Currently playing page");
+
+            string usrInput = readString("Type 'B' to return to the landing page\n");
+
+            while (usrInput.ToUpper() == "B")
+            {
+                usrInput = "";
+                Main();
+            }
         }
         static void Main()
         {
+            Console.Clear();
+
             //initialise highest and lowest choices
             high = 3;
             low = 1;
