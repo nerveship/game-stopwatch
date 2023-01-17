@@ -1,18 +1,5 @@
-﻿/*using System.Data.SQLite;
-
-string cs = "Data Source=:memory:";
-string stm = "SELECT SQLITE_VERSION()";
-
-using var con = new SQLiteConnection(cs);
-con.Open();
-
-using var cmd = new SQLiteCommand(stm, con);
-string version = cmd.ExecuteScalar().ToString();
-
-Console.WriteLine($"SQLite version: {version}");*/
-
-using System;
-using System.Data.SQLite;
+﻿using System;
+using System.Diagnostics;
 
 namespace landing
 {
@@ -48,9 +35,25 @@ namespace landing
         
         static void Time()
         {
+            var timer = new Stopwatch();
             Console.Clear();
             Console.WriteLine("Type 'B' to return to the landing page\n");
-            string usrInput = readString("Which game would you like to log?\n");
+            string usrInput = readString("Press P to start the timer\n");
+
+            if (usrInput.ToUpper() == "P")
+            {
+                timer.Start();
+                usrInput = "";
+                Console.WriteLine("Timer started!");
+                string usrEnd = readString("Enter F to stop the timer and print your time\n");
+
+                if (usrEnd.ToUpper() == "F")
+                {
+                    TimeSpan timeTaken = timer.Elapsed;
+                    timer.Stop();
+                    Console.WriteLine("Timer taken: " + timeTaken.ToString(@"hh\:ss\.fff"));
+                }
+            }
 
             if (usrInput.ToUpper() == "B")
             {
