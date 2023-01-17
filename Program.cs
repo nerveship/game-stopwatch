@@ -46,12 +46,11 @@ namespace landing
             return result; 
         }
         
-        static void Log()
+        static void Time()
         {
             Console.Clear();
-            Console.WriteLine("Logging page");
-
-            string usrInput = readString("Type 'B' to return to the landing page\n");
+            Console.WriteLine("Type 'B' to return to the landing page\n");
+            string usrInput = readString("Which game would you like to log?\n");
 
             if (usrInput.ToUpper() == "B")
             {
@@ -60,41 +59,22 @@ namespace landing
             }
         }
 
-        static void CurrentPlay()
-        {
-            Console.Clear();
-            Console.WriteLine("Currently playing page");
-
-            string usrInput = readString("Type 'B' to return to the landing page\n");
-
-            if (usrInput.ToUpper() == "B")
-            {
-                usrInput = "";
-                Main();
-            }
-        }
         static void Main()
         {
             Console.Clear();
 
             //initialise highest and lowest choices
-            high = 3;
+            high = 2;
             low = 1;
 
             //landing introduction
             Console.WriteLine("Welcome! What would you like to do today?");
-            int usrChoice = readInt("1. Log new game\n" +
-                "2. Check currently playing\n" +
-                "3. Quit\n");
+            int usrChoice = readInt("1. Time game\n" +
+                "2. Quit\n");
 
             if (usrChoice == 1)
             {
-                Log();
-            }
-
-            if (usrChoice == 2)
-            {
-                CurrentPlay();
+                Time();
             }
 
             //exit
